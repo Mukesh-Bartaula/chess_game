@@ -1,3 +1,4 @@
+import 'package:chess_game/widgets/main_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:chess_game/widgets/widgets.dart';
 import 'package:chess_game/models/piece.dart';
@@ -410,6 +411,22 @@ class _GameBoardState extends State<GameBoard> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColor.darkGrey,
+      appBar: AppBar(
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              icon: const Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context)
+                    .openDrawer(); // opens the drawer using the Scaffold context
+              },
+            );
+          },
+        ),
+        title: const Text('Chess Game'),
+        backgroundColor: MyColor.lightGrey,
+      ),
+      drawer: const MainDrawer(),
       body: Column(
         children: [
           //WHite piece taken
