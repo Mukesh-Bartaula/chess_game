@@ -18,9 +18,7 @@ class _VideoCallState extends State<VideoCall> {
       appBar: AppBar(
         automaticallyImplyLeading: true,
         backgroundColor: MyColor.blue,
-        title: const Center(
-          child: Text('Video Call'),
-        ),
+        title: const Text('Video Call'),
       ),
       body: Container(
         padding: const EdgeInsets.all(20),

@@ -17,9 +17,7 @@ class _VoiceCallState extends State<VoiceCall> {
       appBar: AppBar(
         automaticallyImplyLeading: true,
         backgroundColor: MyColor.blue,
-        title: const Center(
-          child: Text('Audio Call'),
-        ),
+        title: const Text('Audio Call'),
       ),
       body: Container(
         padding: const EdgeInsets.all(20),

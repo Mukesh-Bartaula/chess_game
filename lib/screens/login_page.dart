@@ -1,3 +1,5 @@
+import 'package:chess_game/constants/colors.dart';
+import 'package:chess_game/screens/phone_number.dart';
 import 'package:chess_game/screens/reset_password.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -105,8 +107,8 @@ class _LoginPageState extends State<LoginPage> {
                       child: const Text(
                         'forget password?',
                         style: TextStyle(
-                            color: Colors.red,
-                            decoration: TextDecoration.underline),
+                          color: Colors.red,
+                        ),
                       ),
                     )
                   ],
@@ -223,35 +225,63 @@ class _LoginPageState extends State<LoginPage> {
                     ],
                   ),
                 ),
-                // google login
-                ElevatedButton(
-                  onPressed: () async {
-                    bool isGoogleLogin = await googleLogin();
-                    if (isGoogleLogin) {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const GameBoard(),
-                          ));
-                    } else {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text('Google login failed')));
-                    }
-                  },
-                  style: ElevatedButton.styleFrom(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () async {
+                        bool isGoogleLogin = await googleLogin();
+                        if (isGoogleLogin) {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const GameBoard(),
+                              ));
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content: Text('Google login failed')));
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        backgroundColor: Colors.white,
+                      ),
+                      child: SizedBox(
+                        height: 20,
+                        child: Image.network('https://i.imgur.com/lOvSjxm.png'),
+                      ),
                     ),
-                    backgroundColor: Colors.white,
-                  ),
-                  child: SizedBox(
-                    height: 20,
-                    child: Image.network('https://i.imgur.com/lOvSjxm.png'),
-                  ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PhoneNumber(),
+                            ));
+                      },
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                        backgroundColor: Colors.white,
+                      ),
+                      child: const SizedBox(
+                        height: 20,
+                        child: Icon(
+                          Icons.phone,
+                          color: MyColor.green,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
+                // google login
               ],
             ),
           ),

@@ -5,3 +5,5 @@ export 'package:chess_game/screens/call_page.dart';
 export 'package:chess_game/screens/game_board.dart';
 export 'package:chess_game/screens/video_call.dart';
 export 'package:chess_game/screens/voice_call.dart';
+export 'package:chess_game/screens/phone_otp.dart';
+export 'package:chess_game/screens/phone_number.dart';
