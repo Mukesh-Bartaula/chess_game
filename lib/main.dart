@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:chess_game/screens/login_page.dart';
+import 'package:chess_game/screens/login_ui/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:chess_game/firebase_options.dart';
 

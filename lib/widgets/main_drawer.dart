@@ -8,7 +8,7 @@ class MainDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: MyColor.lightGrey,
+      backgroundColor: MyColor.mediumBlue300,
       child: ListView(
         children: [
           const DrawerHeader(

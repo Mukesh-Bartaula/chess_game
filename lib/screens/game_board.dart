@@ -410,7 +410,7 @@ class _GameBoardState extends State<GameBoard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyColor.darkGrey,
+      backgroundColor: MyColor.lightBlue100,
       appBar: AppBar(
         leading: Builder(
           builder: (context) {
@@ -424,7 +424,7 @@ class _GameBoardState extends State<GameBoard> {
           },
         ),
         title: const Text('Chess Game'),
-        backgroundColor: MyColor.lightGrey,
+        backgroundColor: MyColor.blue,
       ),
       drawer: const MainDrawer(),
       body: Column(

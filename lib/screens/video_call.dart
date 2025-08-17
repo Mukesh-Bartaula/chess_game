@@ -1,5 +1,4 @@
 import 'package:chess_game/constants/colors.dart';
-import 'package:chess_game/screens/call_page.dart';
 import 'package:flutter/material.dart';
 
 class VideoCall extends StatefulWidget {
